@@ -10,6 +10,8 @@ import DAO.ClassRosterDAO;
 import DAO.ClassRosterDAOFileImpl;
 import DTO.Student;
 import UI.ClassRosterView;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -27,8 +29,9 @@ public class ClassRosterController {
             int selection = view.getSelection();
             switch (selection) {
                 case 1:
-                    //List all Students
-                    
+                    //List all StudentIds
+                    List<Student> allStudents = dao.getAllStudents();
+                    view.displayStudentList(allStudents);
                     break;
                 case 2:
                     //Create new Student

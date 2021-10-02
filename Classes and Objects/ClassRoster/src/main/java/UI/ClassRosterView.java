@@ -6,6 +6,7 @@
 package UI;
 
 import DTO.Student;
+import java.util.List;
 
 /**
  *
@@ -46,5 +47,15 @@ public class ClassRosterView {
     
     public void createSuccess(){
         io.print("Student successfully created.");
+    }
+    
+    public void displayStudentList(List<Student> studentIds){
+        for(Student i : studentIds){
+            String studentInfo = String.format("#%s : %s %s", 
+                    i.getStudentId(),
+                    i.getFname(),
+                    i.getLname());
+            io.print(studentInfo);
+        }
     }
 }
