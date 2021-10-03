@@ -15,7 +15,15 @@ import java.util.List;
 public class ClassRosterView {
     //Create instance of IO
     
-    UserIO io = new UserIOImpl();
+    UserIO io;
+    
+    public ClassRosterView(UserIO io){
+        this.io = io;
+    }
+
+    public ClassRosterView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public void printMenu(){
         io.print("Please select one of the following (1-5): ");
@@ -56,6 +64,21 @@ public class ClassRosterView {
                     i.getFname(),
                     i.getLname());
             io.print(studentInfo);
+        }
+    }
+    public String getStudentId(){
+        return io.readString("Please enter the student id");
+    }
+    public void printStudent(Student student){
+        io.print("ID# "+ student.getStudentId() + "\nName: "+ student.getFname() + " " + student.getLname() + "\nCohort: "+ student.getCohort());
+    }
+    
+    public void displayRemoveStudent(Student studentRecord){
+        if(studentRecord == null){
+            io.print("No Student with that id exists.");
+        }
+        else{
+            io.print("Student removed successfully");
         }
     }
 }

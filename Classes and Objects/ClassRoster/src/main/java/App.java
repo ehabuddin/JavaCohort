@@ -1,5 +1,10 @@
 
 import Controllers.ClassRosterController;
+import DAO.ClassRosterDAO;
+import DAO.ClassRosterDAOFileImpl;
+import UI.ClassRosterView;
+import UI.UserIO;
+import UI.UserIOImpl;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,7 +18,13 @@ import Controllers.ClassRosterController;
  */
 public class App {
     public static void main(String[] args) {
-        ClassRosterController cont = new ClassRosterController();
+        UserIO io = new UserIOImpl();
+        ClassRosterView view = new ClassRosterView(io);
+        ClassRosterDAO dao = new ClassRosterDAOFileImpl();
+        
+        
+        ClassRosterController cont = new ClassRosterController(dao,view);
+        
         cont.run();
     }
 }

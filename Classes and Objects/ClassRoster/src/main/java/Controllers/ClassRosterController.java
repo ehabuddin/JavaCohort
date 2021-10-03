@@ -18,10 +18,16 @@ import java.util.List;
  * @author mdeha
  */
 public class ClassRosterController {
-
+    
+    ClassRosterDAO dao;
+    ClassRosterView view;
+    
+    public ClassRosterController(ClassRosterDAO dao, ClassRosterView view){
+        this.dao = dao;
+        this.view = view;
+    }
+    
     public void run() {
-        ClassRosterDAO dao = new ClassRosterDAOFileImpl();
-        ClassRosterView view = new ClassRosterView();
         boolean playAgain = true;
 
         while (playAgain) {
@@ -41,9 +47,14 @@ public class ClassRosterController {
                     break;
                 case 3:
                     //View a student
+                    Student myStudent = dao.getStudent(view.getStudentId());
+                    view.printStudent(myStudent);
                     break;
                 case 4:
                     //Remove a student
+                    String studentId = view.getStudentId();
+                    Student studentRemoved = dao.removeStudent(studentId);
+                    view.displayRemoveStudent(studentRemoved);
                     break;
                 case 5:
                     //exit
