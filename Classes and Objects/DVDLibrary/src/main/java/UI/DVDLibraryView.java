@@ -154,4 +154,7 @@ public class DVDLibraryView {
         editDVD.setNote(newNote);
         io.print("Successfully Changed!");
     }
+    public void printMsgNoDVD(){
+        io.print("No Such DVD exists!");
+    }
 }

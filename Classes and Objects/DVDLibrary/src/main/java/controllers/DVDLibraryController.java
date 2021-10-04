@@ -59,6 +59,10 @@ public class DVDLibraryController {
                     //Update
                     String editMovieName = view.getMovieName();
                     DVD editMovie = dao.getDVD(editMovieName);
+                    if(editMovie == null){
+                        view.printMsgNoDVD();
+                        continue;
+                    }
                     view.printEditSelection();
                     int selection = view.getSelectionEdit();
                     switch(selection){
