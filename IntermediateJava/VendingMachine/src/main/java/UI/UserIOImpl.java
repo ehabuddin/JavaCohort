@@ -3,6 +3,7 @@ package UI;
 
 import UI.UserIO;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 /*
@@ -109,6 +110,7 @@ public class UserIOImpl implements UserIO {
         while(true){
             System.out.println(prompt);
             BigDecimal temp = new BigDecimal(myScanner.nextLine());
+            temp = temp.setScale(2,RoundingMode.HALF_UP);
             if(temp.compareTo(min) >= 0 && temp.compareTo(min) <= 0){
                 return temp;
             }
