@@ -6,6 +6,7 @@
 package com.mycompany.vendingmachine.DTO;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  *
@@ -43,6 +44,36 @@ public class VendingMachineItem {
 
     public void setNumItems(int numItems) {
         this.numItems = numItems;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final VendingMachineItem other = (VendingMachineItem) obj;
+        if (this.numItems != other.numItems) {
+            return false;
+        }
+        if (!Objects.equals(this.itemName, other.itemName)) {
+            return false;
+        }
+        if (!Objects.equals(this.itemCost, other.itemCost)) {
+            return false;
+        }
+        return true;
     }
     
 }

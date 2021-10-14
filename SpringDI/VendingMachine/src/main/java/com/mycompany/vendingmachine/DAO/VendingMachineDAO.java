@@ -117,4 +117,8 @@ public class VendingMachineDAO {
         itemAsText += aItem.getNumItems();
         return itemAsText;
     }
+    
+    public void addItem(String itemName, VendingMachineItem item){
+        items.put(itemName, item);
+    }
 }
