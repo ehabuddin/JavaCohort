@@ -1,10 +1,10 @@
-package UI;
+package com.mycompany.vendingmachine.UI;
 
 
-import UI.UserIO;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,6 +16,7 @@ import java.util.Scanner;
  *
  * @author mdeha
  */
+@Component
 public class UserIOImpl implements UserIO {
 
     Scanner myScanner = new Scanner(System.in);

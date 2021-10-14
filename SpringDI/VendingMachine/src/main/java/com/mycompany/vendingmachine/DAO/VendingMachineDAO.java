@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package com.mycompany.vendingmachine.DAO;
 
-import DTO.VendingMachineItem;
+
+import com.mycompany.vendingmachine.DTO.VendingMachineItem;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -19,11 +20,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author mdeha
  */
+@Component
 public class VendingMachineDAO {
     /*DVD addDVD(String movieName, DVD dvd);
     DVD removeDVD(String movieName);

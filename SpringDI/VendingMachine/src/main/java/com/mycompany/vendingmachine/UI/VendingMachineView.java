@@ -3,19 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UI;
+package com.mycompany.vendingmachine.UI;
 
-import DTO.VendingMachineItem;
-import DTO.Change;
+
+import com.mycompany.vendingmachine.DTO.Change;
+import com.mycompany.vendingmachine.DTO.VendingMachineItem;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author mdeha
  */
+@Component
 public class VendingMachineView {
+    @Autowired
     UserIO io;
     private int counter = 1;
     

@@ -3,23 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ServiceLayer;
+package com.mycompany.vendingmachine.ServiceLayer;
 
-import DAO.VendingMachineAuditDAO;
-import DAO.VendingMachineDAO;
-import DAO.VendingMachineDAOException;
-import DTO.VendingMachineItem;
+
+import com.mycompany.vendingmachine.DAO.VendingMachineAuditDAO;
+import com.mycompany.vendingmachine.DAO.VendingMachineDAO;
+import com.mycompany.vendingmachine.DAO.VendingMachineDAOException;
+import com.mycompany.vendingmachine.DTO.VendingMachineItem;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author mdeha
  */
+@Component
 public class VendingMachineServiceLayer {
+    @Autowired
     VendingMachineDAO dao;
+    @Autowired
     VendingMachineAuditDAO auditDAO;
     ArrayList<String> itemNames = new ArrayList<String>();
     

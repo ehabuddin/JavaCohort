@@ -3,26 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controllers;
+package com.mycompany.vendingmachine.Controllers;
 
-import DAO.VendingMachineDAOException;
-import DTO.VendingMachineItem;
-import ServiceLayer.InsufficientFundsException;
-import ServiceLayer.NoItemInventoryException;
-import ServiceLayer.VendingMachineServiceLayer;
-import UI.VendingMachineView;
+import com.mycompany.vendingmachine.DAO.VendingMachineDAOException;
+import com.mycompany.vendingmachine.DTO.VendingMachineItem;
+import com.mycompany.vendingmachine.ServiceLayer.InsufficientFundsException;
+import com.mycompany.vendingmachine.ServiceLayer.NoItemInventoryException;
+import com.mycompany.vendingmachine.ServiceLayer.VendingMachineServiceLayer;
+import com.mycompany.vendingmachine.UI.VendingMachineView;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
+
 
 /**
  *
  * @author mdeha
  */
+@Component
 public class VendingMachineController {
-
+    @Autowired
     VendingMachineView view;
+    @Autowired
     VendingMachineServiceLayer serviceLayer;
 
     public VendingMachineController(VendingMachineView view, VendingMachineServiceLayer serviceLayer) {

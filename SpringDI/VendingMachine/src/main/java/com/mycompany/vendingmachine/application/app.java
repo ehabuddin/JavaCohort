@@ -3,20 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app;
+package com.mycompany.vendingmachine.application;
 
-import Controllers.VendingMachineController;
-import DAO.VendingMachineAuditDAO;
-import DAO.VendingMachineAuditDAOImpl;
-import DAO.VendingMachineDAO;
-import DAO.VendingMachineDAOException;
-import ServiceLayer.InsufficientFundsException;
-import ServiceLayer.NoItemInventoryException;
-import ServiceLayer.VendingMachineServiceLayer;
-import UI.UserIO;
-import UI.UserIOImpl;
-import UI.VendingMachineView;
+
+import com.mycompany.vendingmachine.Controllers.VendingMachineController;
+import com.mycompany.vendingmachine.DAO.VendingMachineDAOException;
+import com.mycompany.vendingmachine.ServiceLayer.InsufficientFundsException;
+import com.mycompany.vendingmachine.ServiceLayer.NoItemInventoryException;
 import java.io.IOException;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  *
@@ -24,6 +19,13 @@ import java.io.IOException;
  */
 public class app {
     public static void main(String[] args) throws VendingMachineDAOException, InsufficientFundsException, NoItemInventoryException, IOException {
+        
+        AnnotationConfigApplicationContext appContext = new AnnotationConfigApplicationContext();
+        appContext.scan("com.mycompany.vendingmachine");
+        appContext.refresh();
+        VendingMachineController controller = appContext.getBean("vendingMachineController", VendingMachineController.class);
+        controller.run();
+        /*
         UserIO io = new UserIOImpl();
         VendingMachineView view = new VendingMachineView(io);
         VendingMachineDAO dao = new VendingMachineDAO();
@@ -31,5 +33,6 @@ public class app {
         VendingMachineServiceLayer serviceLayer = new VendingMachineServiceLayer(dao, audit);
         VendingMachineController controller = new VendingMachineController(view, serviceLayer);
         controller.run();
+        */
     }
 }
