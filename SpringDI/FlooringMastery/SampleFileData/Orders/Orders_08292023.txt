@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+9,HULK,KY,6.00,Tile,145,4.15,3.50,601.75,507.50,67,1176.25

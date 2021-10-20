@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+13,WonderWoman,WA,9.25,Wood,187.25,4.75,5.15,889.44,964.34,171,2024.78

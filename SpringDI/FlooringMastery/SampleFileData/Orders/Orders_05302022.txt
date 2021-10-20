@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+15,Phil,CA,25.00,Laminate,500,2.10,1.75,1050.00,875.00,481,2406.00

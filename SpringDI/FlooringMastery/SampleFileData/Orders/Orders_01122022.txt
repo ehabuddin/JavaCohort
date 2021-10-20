@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+8,Red,TX,4.45,Tile,752,4.15,3.50,3120.80,2632.00,256,6008.80
