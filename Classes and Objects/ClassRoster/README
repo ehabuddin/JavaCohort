@@ -1,0 +1,11 @@
+Overview
+This lesson is the first in a series that form a code-along of an entire console application that puts everything that you've learned so far in the course into practice. The purpose of this code-along is to give you an example of how to design and build a console-based MVC CRUD application using all the tools and techniques you have learned so far. You should use this document as a template for the Address Book and DVD Library labs. We'll build this project following the Agile checklist and will organize it using tiered application design and MVC patterns demonstrated in this section.
+
+Application Requirements and Use Cases
+We will build an application that manages a roster of students. The user will be able to create, view, and delete students in the system and all student data will be persisted to a file. Here are the use cases:
+
+Add Student
+View All Students
+View a Single Student
+Remove Student
+Further, there is a requirement that the application store all of the student data to a file so that student data persists between times the Student Roster application is run.
